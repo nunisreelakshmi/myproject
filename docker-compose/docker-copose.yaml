@@ -1,0 +1,20 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    image: backend-jar
+    container_name: backend-jar-cnr
+    ports:
+      - "8080:8080"  # Adjust the port mapping as needed
+  python:
+    build: ./python
+    image: mypython
+    container_name: mypython-cnr
+    ports:
+      - "8081:8081"  # Adjust the port mapping as needed
+  nginx:
+    build: ./UI
+    image: myui
+    container_name: myui-cnr
+    ports:
+      - "80:80"  # Adjust the port mapping as needed
